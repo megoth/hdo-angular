@@ -1,0 +1,1 @@
+This is an experimental implementation of parts of the HDO admin interface using Angular 2.
