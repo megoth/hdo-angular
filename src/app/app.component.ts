@@ -8,6 +8,8 @@ import { AppState } from './app.service';
 import { Home } from './home';
 import { RouterActive } from './router-active';
 
+import { HdoApiService } from './hdo-api/hdo-api.service';
+
 /*
  * App Component
  * Top Level Component
@@ -15,7 +17,7 @@ import { RouterActive } from './router-active';
 @Component({
   selector: 'app',
   pipes: [ ],
-  providers: [ ],
+  providers: [ HdoApiService ],
   directives: [ RouterActive ],
   encapsulation: ViewEncapsulation.None,
   styles: [
@@ -28,8 +30,8 @@ import { RouterActive } from './router-active';
       </button>
     </span>
     <span router-active>
-      <button [routerLink]=" ['Home'] ">
-        Home
+      <button [routerLink]=" ['Promises'] ">
+        Promises
       </button>
     </span>
     <span router-active>
@@ -46,16 +48,17 @@ import { RouterActive } from './router-active';
   `
 })
 @RouteConfig([
-  { path: '/',      name: 'Index', component: Home, useAsDefault: true },
-  { path: '/home',  name: 'Home',  component: Home },
+  { path: '/',          name: 'Index', component: Home, useAsDefault: true },
+  { path: '/home',      name: 'Home',  component: Home },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
-  { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
+  { path: '/about',     name: 'About', loader: () => require('es6-promise!./about')('About') },
+  { path: '/promises',  name: 'Promises', loader: () => require('es6-promise!./promises')('Promises') }
 ])
 export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
   loading = false;
-  name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
+  name = 'Holder de ord admin';
+  url = 'https://twitter.com/holderdeord';
 
   constructor(
     public appState: AppState) {
