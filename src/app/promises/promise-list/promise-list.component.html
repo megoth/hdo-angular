@@ -1,0 +1,16 @@
+<h2>List</h2>
+<div *ngIf="!model">Loading...</div>
+<table *ngIf="model" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let promise of model.promises">
+      <td>
+        <promise [model]="promise"></promise>
+      </td>
+    </tr>
+  </tbody>
+</table>

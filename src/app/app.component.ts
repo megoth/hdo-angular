@@ -8,7 +8,7 @@ import { AppState } from './app.service';
 import { Home } from './home';
 import { RouterActive } from './router-active';
 
-import { HdoApiService } from './hdo-api/hdo-api.service';
+import { HdoApiService } from './shared/hdo-api/hdo-api.service';
 
 /*
  * App Component
